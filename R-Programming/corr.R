@@ -1,16 +1,18 @@
 corr <- function(directory, threshold = 0) {
-  completed_cases=dim(complete(directory))[1]
+  completed_cases=complete(directory)
+ 
   v=c()
-  if(completed_cases>threshold)
-  {
-    v=corr()
-    
-  }
+  file_names=completed_cases[completed_cases$nobs>threshold,1]
+    for (m in file_names)
+    {
+      file_path=paste(directory,'/',get_proper_file_name(m),'.csv',sep='')
+     
+      frm<-read.csv(file_path)
+      
+      v=append(v,cor(frm$sulfate,frm$nitrate,use="pairwise.complete.obs"))
+    }
   
-  ## 'threshold' is a numeric vector of length 1 indicating the
-  ## number of completely observed observations (on all
-  ## variables) required to compute the correlation between
-  ## nitrate and sulfate; the default is 0
+  v
   
-  ## Return a numeric vector of correlations
+  
 }
