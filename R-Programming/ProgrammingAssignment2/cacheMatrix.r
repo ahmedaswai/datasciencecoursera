@@ -6,9 +6,10 @@
 
 makeCacheMatrix <- function(x = matrix()) {
   inv <-NA
+  set(x)
   set<-function(m)
   {
-    m<-x
+     x<-m
   }
   get <-function()
   {
@@ -21,10 +22,6 @@ makeCacheMatrix <- function(x = matrix()) {
   }
   get_inverse <-function()
   {
-     if(is.na(inv))
-     {
-       set_inverse()
-     }
       inv
     
   }
