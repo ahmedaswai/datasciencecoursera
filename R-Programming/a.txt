@@ -1,0 +1,688 @@
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	new file:   A#1/complete.R
+#	new file:   A#1/corr.R
+#	new file:   A#1/pollutantmean.R
+#	new file:   A#1/specdata/001.csv
+#	new file:   A#1/specdata/002.csv
+#	new file:   A#1/specdata/003.csv
+#	new file:   A#1/specdata/004.csv
+#	new file:   A#1/specdata/005.csv
+#	new file:   A#1/specdata/006.csv
+#	new file:   A#1/specdata/007.csv
+#	new file:   A#1/specdata/008.csv
+#	new file:   A#1/specdata/009.csv
+#	new file:   A#1/specdata/010.csv
+#	new file:   A#1/specdata/011.csv
+#	new file:   A#1/specdata/012.csv
+#	new file:   A#1/specdata/013.csv
+#	new file:   A#1/specdata/014.csv
+#	new file:   A#1/specdata/015.csv
+#	new file:   A#1/specdata/016.csv
+#	new file:   A#1/specdata/017.csv
+#	new file:   A#1/specdata/018.csv
+#	new file:   A#1/specdata/019.csv
+#	new file:   A#1/specdata/020.csv
+#	new file:   A#1/specdata/021.csv
+#	new file:   A#1/specdata/022.csv
+#	new file:   A#1/specdata/023.csv
+#	new file:   A#1/specdata/024.csv
+#	new file:   A#1/specdata/025.csv
+#	new file:   A#1/specdata/026.csv
+#	new file:   A#1/specdata/027.csv
+#	new file:   A#1/specdata/028.csv
+#	new file:   A#1/specdata/029.csv
+#	new file:   A#1/specdata/030.csv
+#	new file:   A#1/specdata/031.csv
+#	new file:   A#1/specdata/032.csv
+#	new file:   A#1/specdata/033.csv
+#	new file:   A#1/specdata/034.csv
+#	new file:   A#1/specdata/035.csv
+#	new file:   A#1/specdata/036.csv
+#	new file:   A#1/specdata/037.csv
+#	new file:   A#1/specdata/038.csv
+#	new file:   A#1/specdata/039.csv
+#	new file:   A#1/specdata/040.csv
+#	new file:   A#1/specdata/041.csv
+#	new file:   A#1/specdata/042.csv
+#	new file:   A#1/specdata/043.csv
+#	new file:   A#1/specdata/044.csv
+#	new file:   A#1/specdata/045.csv
+#	new file:   A#1/specdata/046.csv
+#	new file:   A#1/specdata/047.csv
+#	new file:   A#1/specdata/048.csv
+#	new file:   A#1/specdata/049.csv
+#	new file:   A#1/specdata/050.csv
+#	new file:   A#1/specdata/051.csv
+#	new file:   A#1/specdata/052.csv
+#	new file:   A#1/specdata/053.csv
+#	new file:   A#1/specdata/054.csv
+#	new file:   A#1/specdata/055.csv
+#	new file:   A#1/specdata/056.csv
+#	new file:   A#1/specdata/057.csv
+#	new file:   A#1/specdata/058.csv
+#	new file:   A#1/specdata/059.csv
+#	new file:   A#1/specdata/060.csv
+#	new file:   A#1/specdata/061.csv
+#	new file:   A#1/specdata/062.csv
+#	new file:   A#1/specdata/063.csv
+#	new file:   A#1/specdata/064.csv
+#	new file:   A#1/specdata/065.csv
+#	new file:   A#1/specdata/066.csv
+#	new file:   A#1/specdata/067.csv
+#	new file:   A#1/specdata/068.csv
+#	new file:   A#1/specdata/069.csv
+#	new file:   A#1/specdata/070.csv
+#	new file:   A#1/specdata/071.csv
+#	new file:   A#1/specdata/072.csv
+#	new file:   A#1/specdata/073.csv
+#	new file:   A#1/specdata/074.csv
+#	new file:   A#1/specdata/075.csv
+#	new file:   A#1/specdata/076.csv
+#	new file:   A#1/specdata/077.csv
+#	new file:   A#1/specdata/078.csv
+#	new file:   A#1/specdata/079.csv
+#	new file:   A#1/specdata/080.csv
+#	new file:   A#1/specdata/081.csv
+#	new file:   A#1/specdata/082.csv
+#	new file:   A#1/specdata/083.csv
+#	new file:   A#1/specdata/084.csv
+#	new file:   A#1/specdata/085.csv
+#	new file:   A#1/specdata/086.csv
+#	new file:   A#1/specdata/087.csv
+#	new file:   A#1/specdata/088.csv
+#	new file:   A#1/specdata/089.csv
+#	new file:   A#1/specdata/090.csv
+#	new file:   A#1/specdata/091.csv
+#	new file:   A#1/specdata/092.csv
+#	new file:   A#1/specdata/093.csv
+#	new file:   A#1/specdata/094.csv
+#	new file:   A#1/specdata/095.csv
+#	new file:   A#1/specdata/096.csv
+#	new file:   A#1/specdata/097.csv
+#	new file:   A#1/specdata/098.csv
+#	new file:   A#1/specdata/099.csv
+#	new file:   A#1/specdata/100.csv
+#	new file:   A#1/specdata/101.csv
+#	new file:   A#1/specdata/102.csv
+#	new file:   A#1/specdata/103.csv
+#	new file:   A#1/specdata/104.csv
+#	new file:   A#1/specdata/105.csv
+#	new file:   A#1/specdata/106.csv
+#	new file:   A#1/specdata/107.csv
+#	new file:   A#1/specdata/108.csv
+#	new file:   A#1/specdata/109.csv
+#	new file:   A#1/specdata/110.csv
+#	new file:   A#1/specdata/111.csv
+#	new file:   A#1/specdata/112.csv
+#	new file:   A#1/specdata/113.csv
+#	new file:   A#1/specdata/114.csv
+#	new file:   A#1/specdata/115.csv
+#	new file:   A#1/specdata/116.csv
+#	new file:   A#1/specdata/117.csv
+#	new file:   A#1/specdata/118.csv
+#	new file:   A#1/specdata/119.csv
+#	new file:   A#1/specdata/120.csv
+#	new file:   A#1/specdata/121.csv
+#	new file:   A#1/specdata/122.csv
+#	new file:   A#1/specdata/123.csv
+#	new file:   A#1/specdata/124.csv
+#	new file:   A#1/specdata/125.csv
+#	new file:   A#1/specdata/126.csv
+#	new file:   A#1/specdata/127.csv
+#	new file:   A#1/specdata/128.csv
+#	new file:   A#1/specdata/129.csv
+#	new file:   A#1/specdata/130.csv
+#	new file:   A#1/specdata/131.csv
+#	new file:   A#1/specdata/132.csv
+#	new file:   A#1/specdata/133.csv
+#	new file:   A#1/specdata/134.csv
+#	new file:   A#1/specdata/135.csv
+#	new file:   A#1/specdata/136.csv
+#	new file:   A#1/specdata/137.csv
+#	new file:   A#1/specdata/138.csv
+#	new file:   A#1/specdata/139.csv
+#	new file:   A#1/specdata/140.csv
+#	new file:   A#1/specdata/141.csv
+#	new file:   A#1/specdata/142.csv
+#	new file:   A#1/specdata/143.csv
+#	new file:   A#1/specdata/144.csv
+#	new file:   A#1/specdata/145.csv
+#	new file:   A#1/specdata/146.csv
+#	new file:   A#1/specdata/147.csv
+#	new file:   A#1/specdata/148.csv
+#	new file:   A#1/specdata/149.csv
+#	new file:   A#1/specdata/150.csv
+#	new file:   A#1/specdata/151.csv
+#	new file:   A#1/specdata/152.csv
+#	new file:   A#1/specdata/153.csv
+#	new file:   A#1/specdata/154.csv
+#	new file:   A#1/specdata/155.csv
+#	new file:   A#1/specdata/156.csv
+#	new file:   A#1/specdata/157.csv
+#	new file:   A#1/specdata/158.csv
+#	new file:   A#1/specdata/159.csv
+#	new file:   A#1/specdata/160.csv
+#	new file:   A#1/specdata/161.csv
+#	new file:   A#1/specdata/162.csv
+#	new file:   A#1/specdata/163.csv
+#	new file:   A#1/specdata/164.csv
+#	new file:   A#1/specdata/165.csv
+#	new file:   A#1/specdata/166.csv
+#	new file:   A#1/specdata/167.csv
+#	new file:   A#1/specdata/168.csv
+#	new file:   A#1/specdata/169.csv
+#	new file:   A#1/specdata/170.csv
+#	new file:   A#1/specdata/171.csv
+#	new file:   A#1/specdata/172.csv
+#	new file:   A#1/specdata/173.csv
+#	new file:   A#1/specdata/174.csv
+#	new file:   A#1/specdata/175.csv
+#	new file:   A#1/specdata/176.csv
+#	new file:   A#1/specdata/177.csv
+#	new file:   A#1/specdata/178.csv
+#	new file:   A#1/specdata/179.csv
+#	new file:   A#1/specdata/180.csv
+#	new file:   A#1/specdata/181.csv
+#	new file:   A#1/specdata/182.csv
+#	new file:   A#1/specdata/183.csv
+#	new file:   A#1/specdata/184.csv
+#	new file:   A#1/specdata/185.csv
+#	new file:   A#1/specdata/186.csv
+#	new file:   A#1/specdata/187.csv
+#	new file:   A#1/specdata/188.csv
+#	new file:   A#1/specdata/189.csv
+#	new file:   A#1/specdata/190.csv
+#	new file:   A#1/specdata/191.csv
+#	new file:   A#1/specdata/192.csv
+#	new file:   A#1/specdata/193.csv
+#	new file:   A#1/specdata/194.csv
+#	new file:   A#1/specdata/195.csv
+#	new file:   A#1/specdata/196.csv
+#	new file:   A#1/specdata/197.csv
+#	new file:   A#1/specdata/198.csv
+#	new file:   A#1/specdata/199.csv
+#	new file:   A#1/specdata/200.csv
+#	new file:   A#1/specdata/201.csv
+#	new file:   A#1/specdata/202.csv
+#	new file:   A#1/specdata/203.csv
+#	new file:   A#1/specdata/204.csv
+#	new file:   A#1/specdata/205.csv
+#	new file:   A#1/specdata/206.csv
+#	new file:   A#1/specdata/207.csv
+#	new file:   A#1/specdata/208.csv
+#	new file:   A#1/specdata/209.csv
+#	new file:   A#1/specdata/210.csv
+#	new file:   A#1/specdata/211.csv
+#	new file:   A#1/specdata/212.csv
+#	new file:   A#1/specdata/213.csv
+#	new file:   A#1/specdata/214.csv
+#	new file:   A#1/specdata/215.csv
+#	new file:   A#1/specdata/216.csv
+#	new file:   A#1/specdata/217.csv
+#	new file:   A#1/specdata/218.csv
+#	new file:   A#1/specdata/219.csv
+#	new file:   A#1/specdata/220.csv
+#	new file:   A#1/specdata/221.csv
+#	new file:   A#1/specdata/222.csv
+#	new file:   A#1/specdata/223.csv
+#	new file:   A#1/specdata/224.csv
+#	new file:   A#1/specdata/225.csv
+#	new file:   A#1/specdata/226.csv
+#	new file:   A#1/specdata/227.csv
+#	new file:   A#1/specdata/228.csv
+#	new file:   A#1/specdata/229.csv
+#	new file:   A#1/specdata/230.csv
+#	new file:   A#1/specdata/231.csv
+#	new file:   A#1/specdata/232.csv
+#	new file:   A#1/specdata/233.csv
+#	new file:   A#1/specdata/234.csv
+#	new file:   A#1/specdata/235.csv
+#	new file:   A#1/specdata/236.csv
+#	new file:   A#1/specdata/237.csv
+#	new file:   A#1/specdata/238.csv
+#	new file:   A#1/specdata/239.csv
+#	new file:   A#1/specdata/240.csv
+#	new file:   A#1/specdata/241.csv
+#	new file:   A#1/specdata/242.csv
+#	new file:   A#1/specdata/243.csv
+#	new file:   A#1/specdata/244.csv
+#	new file:   A#1/specdata/245.csv
+#	new file:   A#1/specdata/246.csv
+#	new file:   A#1/specdata/247.csv
+#	new file:   A#1/specdata/248.csv
+#	new file:   A#1/specdata/249.csv
+#	new file:   A#1/specdata/250.csv
+#	new file:   A#1/specdata/251.csv
+#	new file:   A#1/specdata/252.csv
+#	new file:   A#1/specdata/253.csv
+#	new file:   A#1/specdata/254.csv
+#	new file:   A#1/specdata/255.csv
+#	new file:   A#1/specdata/256.csv
+#	new file:   A#1/specdata/257.csv
+#	new file:   A#1/specdata/258.csv
+#	new file:   A#1/specdata/259.csv
+#	new file:   A#1/specdata/260.csv
+#	new file:   A#1/specdata/261.csv
+#	new file:   A#1/specdata/262.csv
+#	new file:   A#1/specdata/263.csv
+#	new file:   A#1/specdata/264.csv
+#	new file:   A#1/specdata/265.csv
+#	new file:   A#1/specdata/266.csv
+#	new file:   A#1/specdata/267.csv
+#	new file:   A#1/specdata/268.csv
+#	new file:   A#1/specdata/269.csv
+#	new file:   A#1/specdata/270.csv
+#	new file:   A#1/specdata/271.csv
+#	new file:   A#1/specdata/272.csv
+#	new file:   A#1/specdata/273.csv
+#	new file:   A#1/specdata/274.csv
+#	new file:   A#1/specdata/275.csv
+#	new file:   A#1/specdata/276.csv
+#	new file:   A#1/specdata/277.csv
+#	new file:   A#1/specdata/278.csv
+#	new file:   A#1/specdata/279.csv
+#	new file:   A#1/specdata/280.csv
+#	new file:   A#1/specdata/281.csv
+#	new file:   A#1/specdata/282.csv
+#	new file:   A#1/specdata/283.csv
+#	new file:   A#1/specdata/284.csv
+#	new file:   A#1/specdata/285.csv
+#	new file:   A#1/specdata/286.csv
+#	new file:   A#1/specdata/287.csv
+#	new file:   A#1/specdata/288.csv
+#	new file:   A#1/specdata/289.csv
+#	new file:   A#1/specdata/290.csv
+#	new file:   A#1/specdata/291.csv
+#	new file:   A#1/specdata/292.csv
+#	new file:   A#1/specdata/293.csv
+#	new file:   A#1/specdata/294.csv
+#	new file:   A#1/specdata/295.csv
+#	new file:   A#1/specdata/296.csv
+#	new file:   A#1/specdata/297.csv
+#	new file:   A#1/specdata/298.csv
+#	new file:   A#1/specdata/299.csv
+#	new file:   A#1/specdata/300.csv
+#	new file:   A#1/specdata/301.csv
+#	new file:   A#1/specdata/302.csv
+#	new file:   A#1/specdata/303.csv
+#	new file:   A#1/specdata/304.csv
+#	new file:   A#1/specdata/305.csv
+#	new file:   A#1/specdata/306.csv
+#	new file:   A#1/specdata/307.csv
+#	new file:   A#1/specdata/308.csv
+#	new file:   A#1/specdata/309.csv
+#	new file:   A#1/specdata/310.csv
+#	new file:   A#1/specdata/311.csv
+#	new file:   A#1/specdata/312.csv
+#	new file:   A#1/specdata/313.csv
+#	new file:   A#1/specdata/314.csv
+#	new file:   A#1/specdata/315.csv
+#	new file:   A#1/specdata/316.csv
+#	new file:   A#1/specdata/317.csv
+#	new file:   A#1/specdata/318.csv
+#	new file:   A#1/specdata/319.csv
+#	new file:   A#1/specdata/320.csv
+#	new file:   A#1/specdata/321.csv
+#	new file:   A#1/specdata/322.csv
+#	new file:   A#1/specdata/323.csv
+#	new file:   A#1/specdata/324.csv
+#	new file:   A#1/specdata/325.csv
+#	new file:   A#1/specdata/326.csv
+#	new file:   A#1/specdata/327.csv
+#	new file:   A#1/specdata/328.csv
+#	new file:   A#1/specdata/329.csv
+#	new file:   A#1/specdata/330.csv
+#	new file:   A#1/specdata/331.csv
+#	new file:   A#1/specdata/332.csv
+#	new file:   A#2/Hospital_Revised_Flatfiles.pdf
+#	new file:   A#2/hospital-data.csv
+#	new file:   A#2/outcome-of-care-measures.csv
+#
+# Changes not staged for commit:
+#   (use "git add/rm <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	deleted:    DataScience.R
+#	deleted:    complete.R
+#	deleted:    corr.R
+#	deleted:    pollutantmean.R
+#	deleted:    specdata/001.csv
+#	deleted:    specdata/002.csv
+#	deleted:    specdata/003.csv
+#	deleted:    specdata/004.csv
+#	deleted:    specdata/005.csv
+#	deleted:    specdata/006.csv
+#	deleted:    specdata/007.csv
+#	deleted:    specdata/008.csv
+#	deleted:    specdata/009.csv
+#	deleted:    specdata/010.csv
+#	deleted:    specdata/011.csv
+#	deleted:    specdata/012.csv
+#	deleted:    specdata/013.csv
+#	deleted:    specdata/014.csv
+#	deleted:    specdata/015.csv
+#	deleted:    specdata/016.csv
+#	deleted:    specdata/017.csv
+#	deleted:    specdata/018.csv
+#	deleted:    specdata/019.csv
+#	deleted:    specdata/020.csv
+#	deleted:    specdata/021.csv
+#	deleted:    specdata/022.csv
+#	deleted:    specdata/023.csv
+#	deleted:    specdata/024.csv
+#	deleted:    specdata/025.csv
+#	deleted:    specdata/026.csv
+#	deleted:    specdata/027.csv
+#	deleted:    specdata/028.csv
+#	deleted:    specdata/029.csv
+#	deleted:    specdata/030.csv
+#	deleted:    specdata/031.csv
+#	deleted:    specdata/032.csv
+#	deleted:    specdata/033.csv
+#	deleted:    specdata/034.csv
+#	deleted:    specdata/035.csv
+#	deleted:    specdata/036.csv
+#	deleted:    specdata/037.csv
+#	deleted:    specdata/038.csv
+#	deleted:    specdata/039.csv
+#	deleted:    specdata/040.csv
+#	deleted:    specdata/041.csv
+#	deleted:    specdata/042.csv
+#	deleted:    specdata/043.csv
+#	deleted:    specdata/044.csv
+#	deleted:    specdata/045.csv
+#	deleted:    specdata/046.csv
+#	deleted:    specdata/047.csv
+#	deleted:    specdata/048.csv
+#	deleted:    specdata/049.csv
+#	deleted:    specdata/050.csv
+#	deleted:    specdata/051.csv
+#	deleted:    specdata/052.csv
+#	deleted:    specdata/053.csv
+#	deleted:    specdata/054.csv
+#	deleted:    specdata/055.csv
+#	deleted:    specdata/056.csv
+#	deleted:    specdata/057.csv
+#	deleted:    specdata/058.csv
+#	deleted:    specdata/059.csv
+#	deleted:    specdata/060.csv
+#	deleted:    specdata/061.csv
+#	deleted:    specdata/062.csv
+#	deleted:    specdata/063.csv
+#	deleted:    specdata/064.csv
+#	deleted:    specdata/065.csv
+#	deleted:    specdata/066.csv
+#	deleted:    specdata/067.csv
+#	deleted:    specdata/068.csv
+#	deleted:    specdata/069.csv
+#	deleted:    specdata/070.csv
+#	deleted:    specdata/071.csv
+#	deleted:    specdata/072.csv
+#	deleted:    specdata/073.csv
+#	deleted:    specdata/074.csv
+#	deleted:    specdata/075.csv
+#	deleted:    specdata/076.csv
+#	deleted:    specdata/077.csv
+#	deleted:    specdata/078.csv
+#	deleted:    specdata/079.csv
+#	deleted:    specdata/080.csv
+#	deleted:    specdata/081.csv
+#	deleted:    specdata/082.csv
+#	deleted:    specdata/083.csv
+#	deleted:    specdata/084.csv
+#	deleted:    specdata/085.csv
+#	deleted:    specdata/086.csv
+#	deleted:    specdata/087.csv
+#	deleted:    specdata/088.csv
+#	deleted:    specdata/089.csv
+#	deleted:    specdata/090.csv
+#	deleted:    specdata/091.csv
+#	deleted:    specdata/092.csv
+#	deleted:    specdata/093.csv
+#	deleted:    specdata/094.csv
+#	deleted:    specdata/095.csv
+#	deleted:    specdata/096.csv
+#	deleted:    specdata/097.csv
+#	deleted:    specdata/098.csv
+#	deleted:    specdata/099.csv
+#	deleted:    specdata/100.csv
+#	deleted:    specdata/101.csv
+#	deleted:    specdata/102.csv
+#	deleted:    specdata/103.csv
+#	deleted:    specdata/104.csv
+#	deleted:    specdata/105.csv
+#	deleted:    specdata/106.csv
+#	deleted:    specdata/107.csv
+#	deleted:    specdata/108.csv
+#	deleted:    specdata/109.csv
+#	deleted:    specdata/110.csv
+#	deleted:    specdata/111.csv
+#	deleted:    specdata/112.csv
+#	deleted:    specdata/113.csv
+#	deleted:    specdata/114.csv
+#	deleted:    specdata/115.csv
+#	deleted:    specdata/116.csv
+#	deleted:    specdata/117.csv
+#	deleted:    specdata/118.csv
+#	deleted:    specdata/119.csv
+#	deleted:    specdata/120.csv
+#	deleted:    specdata/121.csv
+#	deleted:    specdata/122.csv
+#	deleted:    specdata/123.csv
+#	deleted:    specdata/124.csv
+#	deleted:    specdata/125.csv
+#	deleted:    specdata/126.csv
+#	deleted:    specdata/127.csv
+#	deleted:    specdata/128.csv
+#	deleted:    specdata/129.csv
+#	deleted:    specdata/130.csv
+#	deleted:    specdata/131.csv
+#	deleted:    specdata/132.csv
+#	deleted:    specdata/133.csv
+#	deleted:    specdata/134.csv
+#	deleted:    specdata/135.csv
+#	deleted:    specdata/136.csv
+#	deleted:    specdata/137.csv
+#	deleted:    specdata/138.csv
+#	deleted:    specdata/139.csv
+#	deleted:    specdata/140.csv
+#	deleted:    specdata/141.csv
+#	deleted:    specdata/142.csv
+#	deleted:    specdata/143.csv
+#	deleted:    specdata/144.csv
+#	deleted:    specdata/145.csv
+#	deleted:    specdata/146.csv
+#	deleted:    specdata/147.csv
+#	deleted:    specdata/148.csv
+#	deleted:    specdata/149.csv
+#	deleted:    specdata/150.csv
+#	deleted:    specdata/151.csv
+#	deleted:    specdata/152.csv
+#	deleted:    specdata/153.csv
+#	deleted:    specdata/154.csv
+#	deleted:    specdata/155.csv
+#	deleted:    specdata/156.csv
+#	deleted:    specdata/157.csv
+#	deleted:    specdata/158.csv
+#	deleted:    specdata/159.csv
+#	deleted:    specdata/160.csv
+#	deleted:    specdata/161.csv
+#	deleted:    specdata/162.csv
+#	deleted:    specdata/163.csv
+#	deleted:    specdata/164.csv
+#	deleted:    specdata/165.csv
+#	deleted:    specdata/166.csv
+#	deleted:    specdata/167.csv
+#	deleted:    specdata/168.csv
+#	deleted:    specdata/169.csv
+#	deleted:    specdata/170.csv
+#	deleted:    specdata/171.csv
+#	deleted:    specdata/172.csv
+#	deleted:    specdata/173.csv
+#	deleted:    specdata/174.csv
+#	deleted:    specdata/175.csv
+#	deleted:    specdata/176.csv
+#	deleted:    specdata/177.csv
+#	deleted:    specdata/178.csv
+#	deleted:    specdata/179.csv
+#	deleted:    specdata/180.csv
+#	deleted:    specdata/181.csv
+#	deleted:    specdata/182.csv
+#	deleted:    specdata/183.csv
+#	deleted:    specdata/184.csv
+#	deleted:    specdata/185.csv
+#	deleted:    specdata/186.csv
+#	deleted:    specdata/187.csv
+#	deleted:    specdata/188.csv
+#	deleted:    specdata/189.csv
+#	deleted:    specdata/190.csv
+#	deleted:    specdata/191.csv
+#	deleted:    specdata/192.csv
+#	deleted:    specdata/193.csv
+#	deleted:    specdata/194.csv
+#	deleted:    specdata/195.csv
+#	deleted:    specdata/196.csv
+#	deleted:    specdata/197.csv
+#	deleted:    specdata/198.csv
+#	deleted:    specdata/199.csv
+#	deleted:    specdata/200.csv
+#	deleted:    specdata/201.csv
+#	deleted:    specdata/202.csv
+#	deleted:    specdata/203.csv
+#	deleted:    specdata/204.csv
+#	deleted:    specdata/205.csv
+#	deleted:    specdata/206.csv
+#	deleted:    specdata/207.csv
+#	deleted:    specdata/208.csv
+#	deleted:    specdata/209.csv
+#	deleted:    specdata/210.csv
+#	deleted:    specdata/211.csv
+#	deleted:    specdata/212.csv
+#	deleted:    specdata/213.csv
+#	deleted:    specdata/214.csv
+#	deleted:    specdata/215.csv
+#	deleted:    specdata/216.csv
+#	deleted:    specdata/217.csv
+#	deleted:    specdata/218.csv
+#	deleted:    specdata/219.csv
+#	deleted:    specdata/220.csv
+#	deleted:    specdata/221.csv
+#	deleted:    specdata/222.csv
+#	deleted:    specdata/223.csv
+#	deleted:    specdata/224.csv
+#	deleted:    specdata/225.csv
+#	deleted:    specdata/226.csv
+#	deleted:    specdata/227.csv
+#	deleted:    specdata/228.csv
+#	deleted:    specdata/229.csv
+#	deleted:    specdata/230.csv
+#	deleted:    specdata/231.csv
+#	deleted:    specdata/232.csv
+#	deleted:    specdata/233.csv
+#	deleted:    specdata/234.csv
+#	deleted:    specdata/235.csv
+#	deleted:    specdata/236.csv
+#	deleted:    specdata/237.csv
+#	deleted:    specdata/238.csv
+#	deleted:    specdata/239.csv
+#	deleted:    specdata/240.csv
+#	deleted:    specdata/241.csv
+#	deleted:    specdata/242.csv
+#	deleted:    specdata/243.csv
+#	deleted:    specdata/244.csv
+#	deleted:    specdata/245.csv
+#	deleted:    specdata/246.csv
+#	deleted:    specdata/247.csv
+#	deleted:    specdata/248.csv
+#	deleted:    specdata/249.csv
+#	deleted:    specdata/250.csv
+#	deleted:    specdata/251.csv
+#	deleted:    specdata/252.csv
+#	deleted:    specdata/253.csv
+#	deleted:    specdata/254.csv
+#	deleted:    specdata/255.csv
+#	deleted:    specdata/256.csv
+#	deleted:    specdata/257.csv
+#	deleted:    specdata/258.csv
+#	deleted:    specdata/259.csv
+#	deleted:    specdata/260.csv
+#	deleted:    specdata/261.csv
+#	deleted:    specdata/262.csv
+#	deleted:    specdata/263.csv
+#	deleted:    specdata/264.csv
+#	deleted:    specdata/265.csv
+#	deleted:    specdata/266.csv
+#	deleted:    specdata/267.csv
+#	deleted:    specdata/268.csv
+#	deleted:    specdata/269.csv
+#	deleted:    specdata/270.csv
+#	deleted:    specdata/271.csv
+#	deleted:    specdata/272.csv
+#	deleted:    specdata/273.csv
+#	deleted:    specdata/274.csv
+#	deleted:    specdata/275.csv
+#	deleted:    specdata/276.csv
+#	deleted:    specdata/277.csv
+#	deleted:    specdata/278.csv
+#	deleted:    specdata/279.csv
+#	deleted:    specdata/280.csv
+#	deleted:    specdata/281.csv
+#	deleted:    specdata/282.csv
+#	deleted:    specdata/283.csv
+#	deleted:    specdata/284.csv
+#	deleted:    specdata/285.csv
+#	deleted:    specdata/286.csv
+#	deleted:    specdata/287.csv
+#	deleted:    specdata/288.csv
+#	deleted:    specdata/289.csv
+#	deleted:    specdata/290.csv
+#	deleted:    specdata/291.csv
+#	deleted:    specdata/292.csv
+#	deleted:    specdata/293.csv
+#	deleted:    specdata/294.csv
+#	deleted:    specdata/295.csv
+#	deleted:    specdata/296.csv
+#	deleted:    specdata/297.csv
+#	deleted:    specdata/298.csv
+#	deleted:    specdata/299.csv
+#	deleted:    specdata/300.csv
+#	deleted:    specdata/301.csv
+#	deleted:    specdata/302.csv
+#	deleted:    specdata/303.csv
+#	deleted:    specdata/304.csv
+#	deleted:    specdata/305.csv
+#	deleted:    specdata/306.csv
+#	deleted:    specdata/307.csv
+#	deleted:    specdata/308.csv
+#	deleted:    specdata/309.csv
+#	deleted:    specdata/310.csv
+#	deleted:    specdata/311.csv
+#	deleted:    specdata/312.csv
+#	deleted:    specdata/313.csv
+#	deleted:    specdata/314.csv
+#	deleted:    specdata/315.csv
+#	deleted:    specdata/316.csv
+#	deleted:    specdata/317.csv
+#	deleted:    specdata/318.csv
+#	deleted:    specdata/319.csv
+#	deleted:    specdata/320.csv
+#	deleted:    specdata/321.csv
+#	deleted:    specdata/322.csv
+#	deleted:    specdata/323.csv
+#	deleted:    specdata/324.csv
+#	deleted:    specdata/325.csv
+#	deleted:    specdata/326.csv
+#	deleted:    specdata/327.csv
+#	deleted:    specdata/328.csv
+#	deleted:    specdata/329.csv
+#	deleted:    specdata/330.csv
+#	deleted:    specdata/331.csv
+#	deleted:    specdata/332.csv
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	a.txt
