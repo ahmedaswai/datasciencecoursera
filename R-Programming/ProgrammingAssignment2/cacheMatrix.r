@@ -29,8 +29,18 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## This function will search for the matrix in the cache
+# In case if It is in the cache it  return its inverse 
+# else calculate the inverse and add it to the cache
 
 cacheSolve <- function(x, ...) {
-    makeCacheMatrix(x)
+  al=makeCacheMatrix(x)   
+  if(!is.null(al$get()))
+  {
+      print('Getting from the cache')
+      return (al$get_inverse())
+  }
+  al$set(x)
+  al$set_inverse(solve(x))
+  return (al$lget_inverse())
 }
