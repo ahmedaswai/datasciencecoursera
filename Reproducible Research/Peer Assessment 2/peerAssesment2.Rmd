@@ -1,0 +1,140 @@
+Title
+========================================================
+
+In this data analysis , we will try to focus on discovering and answering two questions . The first one is realted to discovering the most harmful events to the humans health that can cause many injures and fatalities? The seond one related to the events that carry the most harmful ecomomical consequences to the government and to the citizens.
+For answering those questions we are going to analyze data collected from the NOAA Storm Database.
+
+Synopsis
+========================================================
+1. The analysis starts with downloading the data and discovering the unusual values that its fields hold.
+2. Then we started to organize the data and ignore the unsignificant values.
+3. We started answering our questions based on our tidy data that are generated based on different assumptions.
+4. For every question , we tried to create a tidy dataset that can be plotted easily and efficiently and can give us the appropriate answers to our questions.
+5. Every answer contains barchart that shows the highest 10 event types that can cause the most harmful affects to the health of the citizens and for the economics of the government and the citizens.
+
+Data Processing 
+========================================================
+#### I started the analysis by downloading the data from this link [ Dataset Link]  (https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2)
+#### First we downloaded and loaded the data using the next R code .
+
+```{r }
+#f <- tempfile()
+#download.file("https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2", f,method='curl')
+#storm_data<-read.csv(bzfile(f))
+storm_data<-read.csv('/host/Downloads/repdata-data-StormData.csv')
+```
+#### We can discover the names of the data by the next command
+```{r}
+storm_data_colNames<-names(storm_data)
+print(storm_data_colNames)
+```
+#### From the names of the coloumns , we should notice that there are only some columns that could answer our questions. 
+
+1. The event type that caused the disaster <font color="blue"> `r storm_data_colNames[8]` </font>
+2. Number of fatalities lost thier life during the disaster <font color="blue"> `r storm_data_colNames[23]`</font>
+3. Number of injures happened in the time of the disaster  <font color="blue"> `r storm_data_colNames[24]`</font>
+4. Property damage amount <font color="blue">  `r storm_data_colNames[25]`</font>
+5. Property damage unit  <font color="blue"> `r storm_data_colNames[26]`</font>
+6. Amount of wasted crops  <font color="blue"> `r storm_data_colNames[27]`</font>
+7. Unit of the amount od wasted crops  <font color="blue"> `r storm_data_colNames[28]`</font>
+
+##### So the next step will be to subset the columns that we are going to use in our analysis . 
+```{r}
+storms<- data.frame(EventType=storm_data$EVTYPE,FatalitiesCount=storm_data$FATALITIES,
+                   InjuresCount=storm_data$INJURIES,PropertyDmgAmount= storm_data$PROPDMG,
+                   PropertyDmgUnit= storm_data$PROPDMGEXP,CropsLostAmount=storm_data$CROPDMG
+                   ,CropsLostUnit=storm_data$CROPDMGEXP)
+```
+##### Then we can print summary for the data to see how the data looks like 
+```{r}
+str(storms)
+summary(storms)
+```
+####  If we tried to take a look on the event types that are in the dataset , we will see that the event types have messy values  .
+```{r}
+print(head(unique(storms$EventType)),10)
+print(tail(unique(storms$EventType)),10)
+```
+#### The event types contain many redundant values that are existed in many similar values .We can see capital,small values for the same event type or similar in the semantics as in this example <font color="blue">  "WINTER STORM/HIGH WIND" and "WINTER STORM HIGH WINDS" </font> .In the analysis, we are going to ignore those values as they don't have significiant affect on our analysis and we are going to focus only the main event types.
+#### We will take the highest occuring 20 events . 
+```{r}
+  
+  event_types_frm <- data.frame(table(storms$EventType))
+  event_types_frm<-na.omit(event_types_frm[ order(event_types_frm$Freq,decreasing=TRUE),])
+  event_types<- event_types_frm[1:20,1]
+  names(event_types_frm)=c("EventType","Frequencey")
+  
+  print_fun<-function(df){
+      event=df[1]
+      frequency=df[2]
+      print_str=paste(sep='','Event Type(',event,') ,Frequencey(',frequency,')')
+      
+  }
+
+  apply( na.omit(event_types_frm[1:20,]),1,print_fun)
+  
+```
+
+#### To answer the first question we need to get the sum of the fatalities and injures for all the occured events .
+##### Therefore we should know what event types in our dataset that have the highest bad impact. Therefore adding them tp small dataset that should contain the event types in addition to the sum of injures and fatalities for every event type.
+```{r}
+
+ event_damage_fatalities <-lapply(event_types ,function(x)
+            {
+                sum(storms[storms$EventType==x,2],na.rm=TRUE)+sum(storms[storms$EventType==x,3],na.rm=TRUE)
+           })
+ 
+event_damage_citizens<-data.frame(event=event_types,fatalities_count=unlist(event_damage_fatalities))
+ 
+summary(event_damage_citizens)
+str(event_damage_citizens)
+```
+#####  Then we will able to plot a barchart to see which event has the most harmful affect on the population health , but before that let's get the  highest 10 events that are the most harmful on the population health.
+```{r fig.align='center',fig.width=14}
+  library(lattice)
+   df_draw<-na.omit(event_damage_citizens [order(event_damage_citizens$fatalities_count,decreasing=TRUE),][1:10,])
+  
+    print(df_draw)
+   barchart(df_draw$fatalities_count ~ df_draw$event,xlab="Event Type",ylab="Number Of Fatalities and Injures" ,col="blue")
+```
+#### To answer the second question we need to conclude a formula that can be applied on our data.
+##### So we will try to add the damage that is caused to the corps to the damage that affected the properties of the citizens .This can be caluclated by  multiplying the unit into the damage, but as we see that the unit is factor  so we should replace its values by numerice ones .We will replace   K and k by 1  M,m by 1000 and B,b by 1000000 any thing else will be replaced by zereos.
+##### First we need to replace the values of the units by numeric values. 
+##### Second we need to create new dataframe which has 2 coloumns the first one is the unique event types , the second one is the sum of the damage multiplied by the unit for the corps and for for the property
+```{r}
+    storms$PropertyDmgUnit<-sapply(storms$PropertyDmgUnit,function(x){
+        ifelse (x %in% c('k','K'),1,
+        ifelse(x %in% c('M','m'),1000,
+        ifelse(x %in% c('B','b'),1000000,0)
+        )
+        )
+                     
+    })
+storms$CropsLostUnit<-sapply(storms$CropsLostUnit,function(x){
+        ifelse (x %in% c('k','K'),1,
+        ifelse(x %in% c('M','m'),1000,
+        ifelse(x %in% c('B','b'),1000000,0)
+        )
+        )
+                     
+    })
+str(storms)
+ damage_economical<-sapply(event_types,function(x){
+    
+    sum( storms[storms$EventType==x,4]*storms[storms$EventType==x,5],na.rm=TRUE)+
+    sum(storms[storms$EventType==x,6]*storms[storms$EventType==x,7],na.rm=TRUE)
+ })
+df_ecomoical_draw<-data.frame(Events=event_types,EconomicalDamage=damage_economical)
+print(na.omit(df_ecomoical_draw))
+summary(df_ecomoical_draw)
+```
+#####  Then the last step will be getting the higher 10 values and draw it in barchart 
+```{r fig.align='center',fig.width=15}
+df_ecomoical_draw<-na.omit(df_ecomoical_draw [order(df_ecomoical_draw$EconomicalDamage,decreasing=TRUE),][1:10,])
+  
+ 
+ barchart(df_ecomoical_draw$EconomicalDamage ~ df_ecomoical_draw$Events,xlab="Event Type",ylab="Economical Damage Value In K " ,col="blue")
+```
+Results
+========================================================
+#### After analyzing the data we can find the answers for our questions in our barcharts, that can be summarized that the <font color="blue"> `r df_draw$event` </font> have the highest bad impact on the citizens health and <font color="blue"> `r df_ecomoical_draw$Events` </font> have the highest bad impact on economics of the government and the citizens.
